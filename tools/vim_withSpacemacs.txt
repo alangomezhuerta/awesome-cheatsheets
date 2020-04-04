@@ -1,0 +1,232 @@
+Visual Mode:  v,V,Ctrl-v
+command line: :,/
+
+H       Hight( jump top of screen)
+M       Middle( jumo middle of screen)
+L       Low(jump bottom of screen)
+
+Ctl e     => Scroll up page ( without moving cursor)
+Ctl y     => Scroll down the page (without moving the cursor)
+zz        -> Scroll page to the middle on the screen
+zt        -> scroll to the top
+zb        -> scroll to the bottom
+
+m       Go to the begginging of next method..., really?
+K       Opens man page of the word below cursor
+
+i       Insert mode
+ea      Insert/append at end of the word
+A       Append at end of the line
+
+^       Jump to the first non blak char
+g_      Jump to the last non blanck char
+fx      Jump to the next occurrence of char x
+Fx      Jump to the previous occurrence of char x
+tx      Jump to before next occurrence of char x
+Tx      Jump to after previous occurrence of char x
+;       Repeat previous f,t,F o T movements
+,       Repeat previous f,t,F,T movements backwards
+Ctrl o  Jump to previous location
+
+* OPERATORS
+c   Change
+d   Delete
+dtX Delete till next char "X" in this case
+y   Yank into register
+s   delete char and substitute text
+S   Delete line and sibstitute tect(sema as cc)
+~   Swap case
+gU    Make Uper case
+gu    Make lower case
+!   Filter to external program
+<   Shift left
+>   Shift Right
+Indent    =
+
+TEXT OBJECTS
+aw    a word
+iw    inner word
+aW    a Word
+iW    inner Word
+ap    a paragraph
+ip    inner paragraph
+ab    a braket
+ib    inner braket
+at    a tag block
+it    inner tag block
+xp    Transpose two letters
+SPC x K  Move text line up
+SPC x J  Move text line down
+
+
+* VISUAL MODE
+v      Switch to visual mode
+V      Switch to VISUAL LINE
+Ctl v  Switch to VISUAL BLOCK
+o      Move to the other end of marked area
+Ctl V  Start visual block mode
+0      Move to the other corner of block
+<>     Indent
+
+J         Join the line to the current one with one one space
+gJ        Join the line below to the current one with no space
+gwip      Reflow paragraph
+
+
+REGISTERS:
+:reg  Shows the registers and their contents
+SPC r y     Shows also the yanked contents, so you can select one and pick it with Enter and paste it where you are
+"a3dd       Delete the next 3 lines and put them into register a
+"ap         Paste contents of register a
+V3jj        Go to Visual mode and select the whole first line, then selects the next 3 lines below
+"ay         Yank into register a whatis selected
+V7G         Go to visual mode and select the whole first line then go to line 7 selecting them
+"by         Yank into register b what is selected
+
+
+MARKS:
+ma    Sets a mark at current cursor location
+'a    Jump to line of mark a(first non blank char in line)
+`a    Junp to position ( line and column ) of mark a
+d'a   Delete from current line to line of mark a
+d`a   Delete from current position to position of mark a
+c'a   Change from current line to line of mark a
+:marks       List all the current marks
+
+NAVIGATING AMONG LOWERCASE MARKS:
+]'         Jump to the next line with a lowercase mark
+]`         Jump to the next lowercase mark}
+['         Jump to the previous line with a lowercase mark
+[`         Jump to the previous lowercase mark
+
+
+SPECIAL MARKS
+`.      Jump to position where last change ocurred in current buffer
+`"      Jump to position where last exited occurred in current buffer
+`0      Jump to position in last file edited(when exited vim)
+`1      like `0 but to the previous file ( also `2 etc )
+' '     Jump back ( to line in current buffer where jumped from
+`[ or `]     Jump to beggining / end of a previous changed or yanked text
+`< or `>     Jump to beggining / end of last visual selection
+
+DELETING MARKS:
+:delmarks a   Delete mark a
+:delmarks a-d Delete mark a, b, c, d
+:delmarks axy Delete marks a, x, y
+:delmarks!    Delete  all lowercase marks
+
+PROJECTS:
+SPC a d     => Loads a project
+
+
+FILES
+SPC f e d   => opens ~/.spacemacs
+SPC f f     => opens file
+SPC f s     => Save an edited file
+:saveas     => Save as new name of file,
+SPC f r     => Search and open a recent file
+
+
+
+BUFFERS
+SPC b d     => kills current buffer
+SPC b b     => Shows all current buffers (same as :b and :b TAB)
+:buffers    => Shows all current buffer
+SPC b s     => Open the scratch buffer
+
+
+
+FRAMES AND WINDOWS
+SPC w s    => Crate a new window and split horizontally down
+SPC w /    => Create new window and split vertically tight
+SPC w v
+SPC w d   =>  Delete the current window
+Ctl-x o   =>  Swith to next window
+Ctl-x 1   =>  Close all windows except active
+SPC w hjkl => Navigate and switch though windows
+
+SEARCH
+SPC s a p   => Search by projects, it uses regexp so you can search by file type like html , txt , etc, etc
+
+
+
+TOGGLE
+SPC t L     => enables line wrapping
+SPC t l     => enables line wrapping
+SPC t n     => line numbers
+SPC T n     => Switch to nect UI theme
+C-c C-t     => toggle status for TODO
+C-c [       => add this buffer to agenda list
+C-c ]       => remove this file from agenda list
+SPC m A     => archive a TODO item
+SPC m R     => refile an archived item
+
+
+ORG-MODE
+SPC m RET   => insert headline (inherit from above)
+SPC m h I   => Looks to be the same as above inserting a main headline
+SPC m h s   => This one creates a sub bullet within another
+ALT [hjkl]  => Can be used to move bullets to become subbullets(h,l), and or to reorganize items by up and down(k,j)
+SPC j i     => To jump to bullets
+SPC RET     => insert a bullet
+TAB         = > Can be used to expand/hide contentes within a bullet/headline ( similar to SPC z a)
+SHIFT TAB   => Collaps all contents within the main single bullet, and expands gradually
+o           => In a sequence listing items, you can just type o and the next number will be displayed
+
+SPC m d     => set deadline for the current TODO
+SPC m s     => set schedule for the current TODO
+
+
+SPC m h i	org-insert-heading-after-current
+SPC m h I	org-insert-heading
+SPC m h s	org-insert-subheading
+SPC m i f	org-insert-footnote
+SPC m i l	org-insert-link
+
+
+
+spc m t n   Create a new table
+
+
+MAGIT
+
+
+
+APPLICATIONS
+
+
+
+CODING:
+gcc   Comment/Uncomment a line or block of code( needed first to instal evil-commentary )
+gc    In visual mode once you selected the block, you just need to hit gc keys
+gc3j  Comment/uncomment till three lines below
+gc23G Comment/Uncomment till line number 23
+, h h Looks for documentation about the statement or function th cursor is located on
+, g u Find reference , useful to jump to a function reference
+, g a Find assignment,  useful to jump to where the variable was assigned to a value or object 1
+
+
+
+REPL
+SPC m s i   Start a REPL Inferior
+SPC m s b   Send buffer to REPL
+SPC m S F   Send function to REPL
+SPC m l     Start live coding
+
+HELP
+SPC h l   Spacemacs' help about layers
+M-x package-list-packages     Shows you all packages available
+
+
+MOTIONS
+%		Go to first matching paren / bracket
+[count]+	Down to first non-blanck char of line
+[count]$	To end of line
+[count]f/F{char}	To next occurrence of char
+[count]t/T{char}	To before next occurrence of {char}
+[count]h/j/k/l
+[count]]m	Go to beggining of next method
+[count]w/W	Go to word/WORD to the right
+[count]b/B	Go to word/WORD to the left
+[count]e/E	Go to end of word/WORD right
+

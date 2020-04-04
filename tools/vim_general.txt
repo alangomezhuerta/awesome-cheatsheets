@@ -1,0 +1,3 @@
+this is to not load eny plugins and just launch vim raw
+vum -u none
+vim -o file1 file2

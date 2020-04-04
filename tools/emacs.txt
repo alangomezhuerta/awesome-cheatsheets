@@ -1,0 +1,76 @@
+
+Ejecutar 3 veces el comando C-p ( subir una línea ) .Estos son equivalentes:
+C-u 3 C-p
+ESC 3 C-p
+Alt-3 C-p
+
+
+Undo:
+C-x u
+C-_
+
+Para deshacer acciones que afectan solo a la región:
+C-u C-x u
+
+
+Ordenes de las ventanas
+
+Teclado
+C-x 0   delete-window. Borra la ventana activa
+C-x 1   delete-other-windows. Borra todas las ventanas menos la activa
+C-x 2   split-window-horizontaly. Divide horizontalmente la ventana activa en dos
+ventanas
+C-x 3   split-window-verticaly. 
+C-x o   other-window. Lleva el cursor a la próxima ventana
+C-M-v   scroll-other-window. Desplaza hacia abajo el texto de la próxima ventana.
+
+
+para evitar problemas lo mejor es activar para cada documento el mismo sistema de codificación que hayamos indicado como opción para el paquete “inputenc”
+
+latin1 - latin-1-unix
+utf8 - utf-8-unix
+
+« C-x RET f » (« set-buffer-file-coding-system ») , para variar el sistema de codificación de un archivo en concreto
+
+
+M-x normal-mode - Volver al modo que emacs trató de asignar en automatico a tu archivo 
+
+« C-x C-f » (« find-file »).
+
+
+C-x C-h  - al acompañar de C-h te manda a la ayuda para ver los keybindings de C-x
+« C-x d » (« dired »).
+« C-x C-s » (« save-buffer »)
+« C-x C-w » (« write-file »).  - salvar como 
+
+« C-x s » (« save-some-buffer »)  Emacs compruebe, para cada uno de los buffers, si ha sido modificado
+C-x C-x         exchange-point-and-mark
+C-SPC   set-mark-command        Fija el principio de la región en el lugar donde se encuentre el cursor
+M-@   mark-word    Selecciona una palabra hacia delante
+C-x h   mark-whole-buffer     Selecciona todo el buffer
+C-M-h   mark-defun      Selecciona todo lo que esté encerrado en los paréntesis más próximos
+
+C-u C-SPC
+C-u C-@          Estos dos ultimos nos permiten movernos entre las ultimas 16 posiciones de la marca. Son los mismos que para establecer la posición de a marca pero con el prefijo C-u
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

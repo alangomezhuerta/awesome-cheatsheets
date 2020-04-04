@@ -1,0 +1,339 @@
+MOVE FAST WORD BY WORD
+w move to the beginning of next word
+b move to the beginning of the previous word
+e move to the end of the next word
+ge move to the end of the previous word
+W move to the beginning of next WORD
+B move to the beginning of the previous WORD
+E move to the end of the next WORD
+gE move to the end of the previous WORD
+
+---
+FIND CHARACTER
+f{character} Find next occurrence of character
+F{character} Find previous occurrence of character
+t{character} Find next occurrence of character and place cursor just before it
+T{character} Find previous occurrence of character and place cursor just before it
+; Go to next occurrence of {character}
+, Go to previous occurrence of {character}
+
+---
+MOVE EXTREMELY HORIZONTALLY
+0 Moves to the first character of a line
+^ Moves to the first non-blank character of a line
+$ Moves to the end of a line
+g_ Moves to the non-blank character at the end of a line
+
+
+---
+MOVE FASTER VERTICALLY
+} Jumps entire paragraphs downwards
+{ similarly but upwards
+CTRL-D lets you move down half a page by scrolling the page
+CTRL-U lets you move up half a page also by scrolling
+
+---
+HIGH PRECISION VERTICAL MOTIONS WITH SEARCH
+/{pattern} Search for {pattern}. {pattern} is a regex.
+?{pattern} Search for {pattern} backwards.
+/ Repeat last search forwards
+? Repeat last search backwards
+n Go to next match
+N Go to previous match
+
+---
+MOVE FASTER WITH COUNTS
+{count}{motion} Repeat {motion} {count} times
+2w Jump to second word
+4f" Jump to fourth occurrence of the " character
+3/cucumber Jump to third match of "cucumber"
+
+
+---
+MOVE SEMANTICALLY
+gd Go to definition (of the word under the cursor)
+gf Go to file (for file under the cursor)
+
+
+---
+MORE NIFTY CORE MOTIONS
+gg Go to the top of the file
+{line}gg Go to {line}
+G Go to the end of the file
+% jump to matching ({[]})
+
+---
+EDIT LIKE MAGIC WITH VIM OPERATORS
+{operator}{count}{motion} Apply operator on bit of text covered by motion
+d delete
+c change
+y yank (copy)
+p p (paste)
+g~ switch case
+gu to make something lowercase
+gU to make something uppercase
+> shift right
+< shift left
+= format
+
+USE CASES
+d5j     to delete 5 lines downwards
+df'     to delete everything in the current line from the cursor until the first occurrence of the ' character (including the character itself)
+dt'     to do like the above example but excluding the character (so up until or just before the ' character)
+d/hello to delete everything until the first occurrence of hello
+ggdG    to delete a complete document
+c/hello changes everything until the first occurrence of hello.
+ggyG    copies a whole document
+gUw     capitalizes a word
+dd      delete a line
+cc      change a line
+yy      yank (copy) a line
+g~~     switch case of a line
+>>      shift line right
+<<      shift lineleft
+==      format line
+D       delete from cursor to the end of the line
+C       change from cursor to the end of the line
+Y       yank (copy) a line. Like yy
+P       put (paste) before the cursor
+
+
+---
+LINEWISE OPERATORS
+dd delete a line
+cc change a line
+yy yank (copy) a line
+g~~ switch case of a line
+>> shift line right
+<< shift lineleft
+== format line
+
+---
+CAPITAL CASE (STRONGER VERSION) OPERATORS
+D delete from cursor to the end of the line
+C change from cursor to the end of the line
+Y yank (copy) a line. Like yy
+P put (paste) before the cursor
+
+---
+TEXT OBJECTS IDENTIFIERS
+w for word
+s for sentence
+', ", ` for quotes
+p for paragraph
+b (or (, )) for block surrounded by (),
+B (or {, }) for block surrounded by {}
+<, > for a block surrounded by <>
+[, ] for a block surrounded by []
+t for tag.
+
+
+USE CASES
+diw delete inner word
+daw delete a word
+dis delete inner sentence
+das delete a sentence
+dip delete inner paragraph
+dap delete a paragraph
+di(dib delete inside parentheses
+da(dab delete text inside parentheses (including parentheses)
+di{diB delete inside braces
+da{daB delete text inside braces (including braces)
+di[ delete inside brackets
+da[ delete text inside brackets (including brackets)
+di" delete inside quotes
+da" delete a quoted text (including quotes)
+dit delete inside tag
+dat delete a tag (including tag)
+ciw change inner word
+cit to change the contents of an HTML tag
+
+---
+CHARACTER EDITING COMMAND
+
+x delete a character. Like dl
+X delete character before the cursor. Like dh
+s change a character. Like cl
+~ switch case of a character
+
+
+---
+CHARACTER EDITING COMMANDS
+x delete a character. Like dl
+X delete character before the cursor. Like dh
+s change a character. Like cl
+~ switch case of a character
+
+
+---
+UNDO AND REDO
+u undo last change
+C-R redo last undo
+{count}u undo last {count} changes
+
+
+---
+COPYING AND PASTING AND REGISTERS
+y{motion} yank (copy) text covered by motion
+p put (paste) after cursor
+P paste before cursor
+yy copy line
+Y copy line
+yyp duplicate line
+ddp swap lines
+xp swap characters
+The unnamed register " is where you copy and cut stuff to, when you don’t explicitly specify a register. The default register if you will.
+The named registers a-z are registers you can use explicitly to copy and cut text at will
+The yank register 0 stores the last thing you have yanked (copied)
+The cut registers 1-9 store the last 9 things you cut by using either the delete or the change command
+"ayas yanks a sentence and stores it in register a.     "ay{motion} copy to register a
+"Ayab this means "Ay{motion} copy and append to register a
+"ap paste from register a
+" unnamed register
+0 yank register
+1-9 the delete or cut registers, so all you cut or delete is moved really here
+[a-z] named registers
+C-R a paste from register a when in Insert mode
+gp same as p but puts the cursor after the pasted selection
+gP same as P and puts the cursor after the pasted selection
+
+---
+PASTING IN INSERT MODE
+CTRL-R " pastes the contents of the unnamed register
+CTRL-R a pastes the contents of register a
+CTRL-R 0 pastes the contents of the yank register
+
+---
+COMMAND-LINE MODE
+:! access external shell commands
+:edit {file} :e {file} create or edit file
+:write :w save file
+:delete
+:quit :q close file
+:write! :w! force save file
+:quit! :q! close file without saving
+:wq     save and close file
+:wall :wa save all files
+:qall :qa close all files
+:wqall :wqa save and close all files
+:qall! :qa! close all files without saving
+:[range]delete [register]:[r]d [r] delete multiple lines into register
+        :10,12d a
+Using offsets (e.g. :10,+2d to delete lines 10, 11 and 12)
+U:{start},{end} start and end lines of range e.g. :1,2d
+:{start},{offset} start and offset lines of range e.g. :1,+2d
+. current line e.g. :.,+2d
+% whole file e.g. :%d
+0 beginning of file e.g. :0,10d
+$ end of file e.g. :10,$d
+:'<,'> visual selection
+@: repeat last ex command
+@@ after repeating it once, you can continue repeating with this
+
+---
+COMMAND-LINE MODE SUBSTITUTE
+:[range]/{pattern}/{substitute}/[flags] substitute matched pattern for string literal in given range
+g flag substitute all matches in a line
+i flag case insensitive search
+c flag confirm substitution for each match
+:%s/led/gold/g
+:s/led/gold/g
+
+---
+SPLIT WINDOWS
+:sp {file} Open file in a horizontal split
+:vsp {file} Open file in a vertical split
+C-W S Open same file in a horizontal split
+C-W V Open same file in a vertical split
+C-W h Move to split to the left
+C-W j Move to split below
+C-W k Move to split above
+C-W l Move to split to the right
+
+---
+TABS:
+:tabnew {file} Open file in new tab
+:tabnext:tabn Jump to next tab
+:tabprev:tabp Jump to previous tab
+:tabonly:tabo Close all other tab
+
+---
+VIM SURROUND
+ds delete surroundings e.g. ds"
+cs change surroundings e.g. cs*tem>
+cs'" to change the surrounding ' for " (cs{old}{new})
+ys add surroundings e.g. ysiw"
+ds" delete surrounding quotes
+cs*tem> change surrounding * for the <em> tag
+ysiw" surround word under the cursor with quotes
+ysaptli> to surround a paragraph with an <li> tag (ys{motion}{char})
+S In visual mode you can select some text, then type S to add surroundings. e.g. Stp> to wrap the selection in a <p> tag
+
+---
+VSCODE CUSTOM BINDING
+J  Goeas down 7 lines below
+K       Goeas up 7 lines above
+Leader + /  Cleaning highlighted text
+
+---
+VSCODE ONLY
+Go To File (CTRL-P or CMD-P)
+Go To Symbol in File (CTRL-SHIFT-O or CMD-SHIFT-O)
+Go To Symbol in Workspace (CMD-T or CTRL-T)
+
+---
+VIM SNEAK
+s{char}{char} Jump to the next ocurrence of {char}{char}
+S{char}{char} Jump to the previous ocurrence of {char}{char}
+; Go to next occurrence of {char}{char}
+, Go to previous occurrence of {char}{char}
+{op}z{char}{char} Apply operator on text traversed by vim sneak motion
+  NOTE :  When used in conjunction with other operators, vim-sneak uses the z because the s is already taken by vim-surround. And vim-surround is an extremely popular Vim plugin
+
+---
+VIM EASY MOTION
+<leader><leader>w   will label the beginning of all words ahead of you
+<leader><leader>f' and EasyMotion will label all occurrences of the '
+<leader><leader>w	start of words
+<leader><leader>b	start of words backwards
+<leader><leader>bdw	start of words everywhere. The bd stands for bidirectional
+<leader><leader>e	end of words
+<leader><leader>ge	end of words backwards
+<leader><leader>bdw	end of words everywhere
+<leader><leader>j	beginning of lines
+<leader><leader>k	beginning of lines backwards
+<leader><leader>f{char}	find character
+<leader><leader>F{char}	find character backwards
+<leader><leader>t{char}	until character
+<leader><leader>T{char}	until character backwards
+<leader><leader>s{char}	search character everywhere
+
+---
+MULTIPLE CURSORS
+Based on Search
+<CMD-D><C-D>gb Adds an additional cursor. This command puts you in visual mode. In effect, it selects all the words under each new cursor at once.
+{operator} Applies operator on words selected by the multiple cursors.
+I Insert before multiple words at the same time
+A Append after multiple words at the same time
+In Consecutive Rows
+<C-V> Go into Visual-block mode and select text using motions
+{operator} Applies operator on visual selection.
+I Insert before visual selection
+A Append after visual selection
+
+---
+REUSABLE EDITING WITH MACROS
+q{register} Start recording a new macro in {register}
+q Stop recording macro
+@{register} Replay macro in {register}
+@@ Replay the last macro that you executed
+
+---
+SOME HANDY VSCODE ONLY MAPPINGS
+af Select increasingly bigger blocks of text
+gh Equivalent to hovering the mouse over a bit of text.
+
+
+
+
+
