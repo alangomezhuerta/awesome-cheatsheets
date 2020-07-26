@@ -1,3 +1,46 @@
 this is to not load eny plugins and just launch vim raw
 vum -u none
 vim -o file1 file2
+
+##############################################################################
+# TABs
+##############################################################################
+
+:tabedit file2
+gt	go to next tab
+gT	go to previous tab
+{i}gt	navigate to a tab number i, i.e:  3gt
+:tabfirst
+:tablast
+:tabs	List all the open tabs
+vim -p file1 file2	This is to open multiple files in tabs
+:tabclose		Close a single tab
+:tabonly		Close all escept the current tab
+:mksession file.vim	Stores your tabs status in file.vim for further use
+vim -S file.vim		To open the session of tabs
+:source file.vim	To open the session of tabs
+:mks!			To save/update the current session of tabs
+
+##############################################################################
+# Folding
+##############################################################################
+zf'b		Folding from cursor position to mark b
+:5,16fo		Folding by range of lines
+zo		Open the code fold
+zc		Close the code fold
+za		Toggle between open and close folds
+
+##############################################################################
+# Indentation
+##############################################################################
+=i{		Ident innet objet, hence identig all within the brakets
+>i}		Increase the indentation
+<i{		Decrease the infentation
+
+##############################################################################
+# Autocompletion
+##############################################################################
+
+Ctrl + n	Automcompletion 
+
+
