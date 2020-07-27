@@ -40,7 +40,24 @@ za		Toggle between open and close folds
 ##############################################################################
 # Autocompletion
 ##############################################################################
-
 Ctrl + n	Automcompletion 
+
+##############################################################################
+# File and dir explorer
+##############################################################################
+:Ex			:Explore   Open the explorer
+:Sex			:Sexplore  open the explorer horizontally
+:Vex			:Vexplore  open the explorer vertically
+:Tex			:Texplore  open the expx			:Sexplore  open the explorer horizontally
+:Vex			:Vexplore  open the explorer in a tab 
+:bdel			Buffer delete , unloads he current buffer
+
+##############################################################################
+# Macros
+##############################################################################
+
+
+
+
 
 
