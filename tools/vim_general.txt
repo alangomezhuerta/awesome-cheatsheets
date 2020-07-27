@@ -53,11 +53,21 @@ Ctrl + n	Automcompletion
 :bdel			Buffer delete , unloads he current buffer
 
 ##############################################################################
-# Macros
+# Jump
 ##############################################################################
-
-
-
-
-
-
+[{			Jump to beggin of block
+]}			Jump to end of block
+%			Jump to matching delimiter
+:tag ...		Jump to specific tag ...
+Ctrl ]			Jump to tag definition
+Ctrl t			Jump to older tag
+:jumps			Shows the jumps
+Ctrl o			Jump back
+Ctrl i			Jump forth
+2g;			Jump to two older positions
+2g,			Jump to two further positions
+:changes		Display all the changes with change number, line num
+`.			go to the line that you last edited
+''			jump to the line where the cursor was before the prev jump
+gi			return to insert mode where you inserted text last time
+gd			jump to function or variable declaration
