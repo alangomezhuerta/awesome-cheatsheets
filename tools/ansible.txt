@@ -1,0 +1,5 @@
+##############################################################################
+# Ansible
+##############################################################################
+ansible --list-hosts webservers				Query the hosts inventory file for the webservers group
+

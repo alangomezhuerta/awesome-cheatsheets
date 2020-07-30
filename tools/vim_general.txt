@@ -71,3 +71,8 @@ Ctrl i			Jump forth
 ''			jump to the line where the cursor was before the prev jump
 gi			return to insert mode where you inserted text last time
 gd			jump to function or variable declaration
+
+##############################################################################
+# Other
+##############################################################################
+:set list		Show chars instead of tabs and - instead of spaces

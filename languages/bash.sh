@@ -435,3 +435,11 @@ function returntrap {
 }
 
 trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
+
+
+##############################################################################
+# Builtin
+##############################################################################
+fg	Gets a process from background to run in foreground
+bg	Kicks a process to continue in background
+fc	Launch default editor with the last command in history	
