@@ -2,4 +2,24 @@
 # Ansible
 ##############################################################################
 ansible --list-hosts webservers				Query the hosts inventory file for the webservers group
+ansible -i inventory -m ping webservers			Ping to the webservers group taken from host file calles inventory
+
+##############################################################################
+ AdHoc commands
+##############################################################################
+-m							Module
+-a							Module Arguments
+-b							become
+-C							Try to predict without doing any changes
+-D							Diff, show the differences in small changes in files or templates, works great with -C
+-e							Extra vars, set additional variables as key=value or YAML/JSON, if filename prepend with @
+-f							Forks, i.e  -f 1 will enforce to execute in serial instead of the parellel processing
+-o							one line, condense output
+-t							Log output to this directory
+-u							Connect as this remote user
+-v							verbose
+-vv							useful vervose
+-vvv							more info
+-vvvv							verbose toconnection debugging
+ansible [host or group] -m setup			To get the facts of that host ot group
 

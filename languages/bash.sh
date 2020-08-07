@@ -443,3 +443,4 @@ trap returntrap RETURN  # is executed each time a shell function or a script exe
 fg	Gets a process from background to run in foreground
 bg	Kicks a process to continue in background
 fc	Launch default editor with the last command in history	
+fc [historynumber}  	Launch the editor with that history number command
