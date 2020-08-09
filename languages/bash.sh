@@ -444,3 +444,11 @@ fg	Gets a process from background to run in foreground
 bg	Kicks a process to continue in background
 fc	Launch default editor with the last command in history	
 fc [historynumber}  	Launch the editor with that history number command
+
+##############################################################################
+# cut
+##############################################################################
+cut -d " " -f 4- file.txt	Show only from the field 4 to end of line, delimiter = " "
+cut -d " " -f 4-8 file.txt	Show only fields from 4 to 8, space counts as a field
+cut -c -5 file.txt		Show each line from character 1 to character 5 only
+

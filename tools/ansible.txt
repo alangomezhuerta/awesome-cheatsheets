@@ -3,6 +3,17 @@
 ##############################################################################
 ansible --list-hosts webservers				Query the hosts inventory file for the webservers group
 ansible -i inventory -m ping webservers			Ping to the webservers group taken from host file calles inventory
+ansible all -m setup					Gather facts
+ansible all -o -m command -a "date"			executes a command with result in a single line
+ansible all -a "df -h"					the module command is the one y default so this is taken
+ansible-config list					List all configurations
+ansible-config view					Display the current config file
+ansible-config dump					Show the current settungs , merge the specified configuration
+ansible-config dump --only-changed
+ansible-config dump --verbose
+
+
+
 
 ##############################################################################
  AdHoc commands
@@ -22,4 +33,17 @@ ansible -i inventory -m ping webservers			Ping to the webservers group taken fro
 -vvv							more info
 -vvvv							verbose toconnection debugging
 ansible [host or group] -m setup			To get the facts of that host ot group
+
+##############################################################################
+# ansible-doc
+##############################################################################
+ansible-doc -l						List available plugins
+ansible-doc service					Show the documentation about service module
+
+
+##############################################################################
+# ansible-galaxy
+##############################################################################
+
+
 

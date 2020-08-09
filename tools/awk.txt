@@ -1,0 +1,14 @@
+##############################################################################
+# awk
+##############################################################################
+awk -F: '{print $1,$3}' /etc/passd	print fields 1 and third with delimiter ":"
+awk -F: -f awkscript /etc/passwd	executes instructions from a script file
+awk -F: '{ result=$1 " with home at " $6; print result } /etc/passwd	Assigns the result in result and prints it
+awk 'BEGIN { print "This is a custom header }
+    { print $0 }
+    END { print "This is a custom footer" } ' file.txt		Pre and Post processing
+
+
+
+
+
