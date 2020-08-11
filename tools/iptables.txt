@@ -1,0 +1,11 @@
+##############################################################################
+# iptables
+##############################################################################
+
+iptables -t filter -L -v -n				Display the rules from an specific table
+iptables -A INPUT -s xxx.xxx.xxx.xxx -j DROP		To block an abusive ipaddress
+iptables -A INPUT -p tcp -s xxx.xxx.xxx.xxx -j DROP	Block tpc traffic from an IP
+iptables -D INPUT -s xxx.xxx.xxx.xxx -j DROP 		To remove (unblock) specific IP from your iptables rule   
+iptables -A OUTPUT -d 192.168.5.0/24 --dport 25 -j ACCEPT		Allow outgoing connections to a subnet range in port 25
+iptables -A OUTPUT -p tcp -d 31.13.64.0/18 -j DROP			Block a IP range (in this case the range of facebook.com) , so your system can not reach these
+

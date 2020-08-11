@@ -19,6 +19,9 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
+tabnew
+tabnew
 tabrewind
 edit tools/vim.txt
 set splitbelow splitright
@@ -49,7 +52,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 159 - ((16 * winheight(0) + 24) / 49)
+let s:l = 159 - ((15 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -174,12 +177,96 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 454 - ((48 * winheight(0) + 24) / 49)
+let s:l = 453 - ((47 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-454
+453
+normal! 083|
+lcd ~/do/awesome-cheatsheets
+tabnext
+edit ~/do/awesome-cheatsheets/tools/iptables.txt
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+if bufexists("~/do/awesome-cheatsheets/tools/iptables.txt") | buffer ~/do/awesome-cheatsheets/tools/iptables.txt | else | edit ~/do/awesome-cheatsheets/tools/iptables.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
 normal! 0
+lcd ~/do/awesome-cheatsheets
+tabnext
+edit ~/do/awesome-cheatsheets/tools/networking.txt
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+if bufexists("~/do/awesome-cheatsheets/tools/networking.txt") | buffer ~/do/awesome-cheatsheets/tools/networking.txt | else | edit ~/do/awesome-cheatsheets/tools/networking.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 31 - ((28 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+31
+normal! 0146|
+lcd ~/do/awesome-cheatsheets
+tabnext
+edit ~/do/awesome-cheatsheets/tools/linuxtools.txt
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+if bufexists("~/do/awesome-cheatsheets/tools/linuxtools.txt") | buffer ~/do/awesome-cheatsheets/tools/linuxtools.txt | else | edit ~/do/awesome-cheatsheets/tools/linuxtools.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 0161|
 lcd ~/do/awesome-cheatsheets
 tabnext
 edit ~/do/awesome-cheatsheets/tools/ansible.txt
@@ -202,14 +289,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 24) / 49)
+let s:l = 14 - ((13 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+14
+normal! 012|
 lcd ~/do/awesome-cheatsheets
-tabnext 5
+tabnext 6
 set stal=1
 badd +153 ~/do/awesome-cheatsheets/tools/vim.txt
 badd +78 ~/do/awesome-cheatsheets/tools/vim_general.txt
@@ -218,6 +305,9 @@ badd +1 ~/do/awesome-cheatsheets/tools/awk.txt
 badd +4 ~/do/awesome-cheatsheets/tools/sed.txt
 badd +454 ~/do/awesome-cheatsheets/languages/bash.sh
 badd +0 ~/do/awesome-cheatsheets/tools/ansible.txt
+badd +0 ~/do/awesome-cheatsheets/tools/iptables.txt
+badd +0 ~/do/awesome-cheatsheets/tools/networking.txt
+badd +0 ~/do/awesome-cheatsheets/tools/linuxtools.txt
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -229,7 +319,6 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

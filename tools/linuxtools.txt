@@ -1,0 +1,13 @@
+##############################################################################
+# linux tools
+##############################################################################
+
+rsync -t *.html new-server:public_html/			- 		Transfer all the html files from the local machine to the remote host called new-server
+sestatus			-			Allows you to view the SELinux status directly from command line
+echo "Subject: New" | sendmail alias@address.com < mail.com		-		Will send the contents of mail.txt to the specified address
+mailstats -p						- 		Display the mail statistics for linux email setvers, works with sendmail statistics by default
+dstat							-		Modern replacement for vmstat, netstat and ifstat tools
+dstat -c --top-cpu --top-mem				-		Shows statistics for cpu, top consuming cpu processes, and top consuming memory processes
+env							-		Display the active environment variables
+#!/usr/bin/env -S perl -w -T				-		Will execute the script as it were as follows:  perl -w -T script.pl
+
