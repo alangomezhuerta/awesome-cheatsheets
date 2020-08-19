@@ -1,22 +1,5 @@
 ##############################################################################
-# Ansible
-##############################################################################
-ansible --list-hosts webservers				Query the hosts inventory file for the webservers group
-ansible -i inventory -m ping webservers			Ping to the webservers group taken from host file calles inventory
-ansible all -m setup					Gather facts
-ansible all -o -m command -a "date"			executes a command with result in a single line
-ansible all -a "df -h"					the module command is the one y default so this is taken
-ansible-config list					List all configurations
-ansible-config view					Display the current config file
-ansible-config dump					Show the current settungs , merge the specified configuration
-ansible-config dump --only-changed
-ansible-config dump --verbose
-ansible app -b -m yum -a "name=MySQL-python state=present" 		Install a package with yum module, needs of -b to become root
-
-
-
-##############################################################################
- AdHoc commands
+# Ansible command arguments
 ##############################################################################
 -m							Module
 -a							Module Arguments
@@ -33,6 +16,45 @@ ansible app -b -m yum -a "name=MySQL-python state=present" 		Install a package w
 -vvv							more info
 -vvvv							verbose toconnection debugging
 ansible [host or group] -m setup			To get the facts of that host ot group
+
+##############################################################################
+# Ansible command samples
+##############################################################################
+# Query the hosts inventory file for the webservers group:
+  ansible --list-hosts webservers			
+
+# Ping to the webservers group taken from host file called inventory
+  ansible -i inventory -m ping webservers		
+
+
+# Gather facts						
+  ansible all -m setup				
+
+# Executes a command with result in a single line:
+  ansible all -o -m command -a "date"		
+
+# The module command is the one taken as default:
+  ansible all -a "df -h"				
+
+# List all configurations:
+  ansible-config list				
+ansible-config view				Display the current config file
+ansible-config dump				Show the current settings , merge the 
+						specified configuration
+ansible-config dump --only-changed		display only changed settings
+ansible-config dump --verbose			Display current settings in detail
+ansible app -b -m yum -a \			Install a package with yum module 	
+	"name=MySQL-python state=present"
+ansible app -b -a "service ntpd restart" \	Limit to a single host in group app
+	--limit "192.168.0.4" 			
+ansible app -b -a \				Limit with wildcard match
+	"service ntpd restart" --limit "*.4" 			
+ansible app -b -a "service ntpd restart" \	Limit by using regexp
+	--limit ~".*\.4" 		
+
+
+
+
 
 ##############################################################################
 # ansible-doc
