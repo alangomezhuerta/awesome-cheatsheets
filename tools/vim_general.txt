@@ -1,11 +1,16 @@
-this is to not load eny plugins and just launch vim raw
-vum -u none
-vim -o file1 file2
+##############################################################################
+Vim notes
+##############################################################################
+
+
+This is to not load eny plugins and just launch vim raw
+vim -u none
 
 ##############################################################################
 # TABs
 ##############################################################################
 
+vim -o file1 file2
 :tabedit file2
 gt	go to next tab
 gT	go to previous tab
@@ -48,7 +53,7 @@ Ctrl + n	Automcompletion
 :Ex			:Explore   Open the explorer
 :Sex			:Sexplore  open the explorer horizontally
 :Vex			:Vexplore  open the explorer vertically
-:Tex			:Texplore  open the expx			:Sexplore  open the explorer horizontally
+:Tex			:Texplore  open the expx			
 :Vex			:Vexplore  open the explorer in a tab 
 :bdel			Buffer delete , unloads he current buffer
 
@@ -64,13 +69,14 @@ Ctrl t			Jump to older tag
 :jumps			Shows the jumps
 Ctrl o			Jump back
 Ctrl i			Jump forth
-2g;			Jump to two older positions
-2g,			Jump to two further positions
+2g;			Jump to two older positions (cycle through changes)
+2g,			Jump to two further positions (cycle through changes)
 :changes		Display all the changes with change number, line num
 `.			go to the line that you last edited
 ''			jump to the line where the cursor was before the prev jump
 gi			return to insert mode where you inserted text last time
 gd			jump to function or variable declaration
+gf			go to file, open the file named with word under the cursor
 
 ##############################################################################
 # Other

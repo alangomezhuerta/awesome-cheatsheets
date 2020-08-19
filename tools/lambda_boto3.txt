@@ -1,0 +1,9 @@
+##############################################################################
+Automation with lambda and boto3
+##############################################################################
+
+pip3 install awscli
+pip3 install awscli --user		To install it only for the user and avoid permissions errors
+aws configure				Will ask you for access key id and secret
+aws configure --profile root		Will create config for a named profile	
+
