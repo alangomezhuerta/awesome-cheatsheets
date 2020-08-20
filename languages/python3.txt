@@ -1,0 +1,47 @@
+Python 3
+
+Install python 3 in RHEL
+##############################################################################
+
+yum install gcc openssl-devel bzip2-devel libffi-devel
+cd /usr/src
+wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+tar xzf Python-3.7.4.tgz
+cd Python-3.7.4
+./configure --enable-optimizations
+make -j 8		- 	Optionally assign a number of jobs ( cpus ) you wanto to assing
+sudo make altinstall
+
+cd /usr/local/bin/
+./python3.7 --version
+./pip3.7 --version
+pwd
+ln -s /usr/local/bin/python3.7 /bin/python3
+python3 --version
+ln -s /usr/local/bin/pip3.7 /bin/pip3
+pip3 --version
+pip3 install boto3
+
+
+Install python 3 in Debian/Ubuntu
+##############################################################################
+
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
+		 libnss3-dev libssl-dev libreadline-dev libffi-dev
+
+* The rest of steps are same as for RHEL
+
+
+
+Install a virtual environment to work
+##############################################################################
+mkdir pythonproject
+cd pythonproject 
+python3.8.5 -m venv myenv		- Create a directory with python in a virtual env
+source ./myenv/bin/activate			- Activate the virtual environmentmkdir pythonproject
+
+Update pip
+##############################################################################
+python -m pip install --upgrade pip
+
+

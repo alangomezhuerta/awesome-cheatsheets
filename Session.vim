@@ -19,7 +19,7 @@ $argadd tools/vim_withVSCode.txt
 $argadd tools/sed.txt
 $argadd backend/django.py
 $argadd tools/ansible.txt
-edit tools/iptables.txt
+edit languages/python3.txt
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -29,7 +29,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-if bufexists("tools/iptables.txt") | buffer tools/iptables.txt | else | edit tools/iptables.txt | endif
+if bufexists("languages/python3.txt") | buffer languages/python3.txt | else | edit languages/python3.txt | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -39,27 +39,29 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 25) / 50)
+let s:l = 21 - ((20 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-32
-normal! 087|
+21
+normal! 017|
 lcd ~/do/awesome-cheatsheets
 tabnext 1
-badd +4 ~/do/awesome-cheatsheets/tools/terraform.txt
+badd +11 ~/do/awesome-cheatsheets/tools/lambda_boto3.txt
 badd +10 ~/do/awesome-cheatsheets/tools/linuxtools.txt
 badd +1 ~/do/awesome-cheatsheets/languages/bash.sh
 badd +1 ~/do/awesome-cheatsheets/tools/vim.txt
 badd +1 ~/do/awesome-cheatsheets/tools/vim_general.txt
 badd +1 ~/do/awesome-cheatsheets/tools/vim_withVSCode.txt
 badd +4 ~/do/awesome-cheatsheets/tools/sed.txt
-badd +1 ~/do/awesome-cheatsheets/backend/django.py
+badd +76 ~/do/awesome-cheatsheets/backend/django.py
 badd +2 ~/do/awesome-cheatsheets/tools/ansible.txt
+badd +32 ~/do/awesome-cheatsheets/tools/iptables.txt
+badd +4 ~/do/awesome-cheatsheets/tools/terraform.txt
 badd +1 ~/do/awesome-cheatsheets/tools/awk.txt
 badd +32 ~/do/awesome-cheatsheets/tools/networking.txt
 badd +1 ~/do/awesome-cheatsheets/tools/docker.sh
-badd +0 ~/do/awesome-cheatsheets/tools/iptables.txt
+badd +21 ~/do/awesome-cheatsheets/languages/python3.txt
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
