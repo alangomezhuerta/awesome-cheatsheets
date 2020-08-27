@@ -37,8 +37,8 @@ Install a virtual environment to work
 ##############################################################################
 mkdir pythonproject
 cd pythonproject 
-python3.8.5 -m venv myenv		- Create a directory with python in a virtual env
-source ./myenv/bin/activate			- Activate the virtual environmentmkdir pythonproject
+python3.8.5 -m venv .venv		- Create a directory with python in a virtual env
+source ./.venv/bin/activate			- Activate the virtual environmentmkdir pythonproject
 
 Update pip
 ##############################################################################
