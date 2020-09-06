@@ -40,8 +40,9 @@ cd pythonproject
 python3.8.5 -m venv .venv		- Create a directory with python in a virtual env
 source ./.venv/bin/activate			- Activate the virtual environmentmkdir pythonproject
 
-Update pip
+Install a package by also ensuring its getting the latest version
 ##############################################################################
 python -m pip install --upgrade pip
+pip install -U pip
 
 
