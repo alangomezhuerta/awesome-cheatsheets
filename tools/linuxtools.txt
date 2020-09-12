@@ -11,3 +11,16 @@ dstat -c --top-cpu --top-mem				Shows statistics for cpu, top consuming cpu proc
 env							Display the active environment variables
 #!/usr/bin/env -S perl -w -T				Will execute the script as it were as follows:  perl -w -T script.pl
 tr ' ' \\t				Translate, convert characters to other characters
+
+openssl
+##############################################################################
+openssl x509 -text -noout < cert.pem			Inspect the attributes of a particular certificate and ensure that
+							thinks like the domain name and expiration date are correct
+
+openssl x509 -checkend 86499 -noout < cert.pem		Quicly verify that the cert is valid withi the next dat; the argument
+							checkend is in seconds
+
+
+##############################################################################
+dd if=/dev/urandom of=testfile bs=1024MB count1		Create a 1 GB file
+
