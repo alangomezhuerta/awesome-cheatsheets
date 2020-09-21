@@ -33,12 +33,20 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
 
 
 
-Install a virtual environment to work
+Create a virtual environment in python 3.4 +
 ##############################################################################
 mkdir pythonproject
 cd pythonproject 
 python3.8.5 -m venv .venv		- Create a directory with python in a virtual env
 source ./.venv/bin/activate			- Activate the virtual environmentmkdir pythonproject
+
+
+Create a virtual environment alternate way. Any python version
+##############################################################################
+sudo pip install virtualenv		- Install system wide the virtualenv command
+virtualenv .venv			- create a directory with python in a virtual env
+source .venv/bin.activate
+
 
 Install a package by also ensuring its getting the latest version
 ##############################################################################

@@ -24,3 +24,8 @@ openssl x509 -checkend 86499 -noout < cert.pem		Quicly verify that the cert is v
 ##############################################################################
 dd if=/dev/urandom of=testfile bs=1024MB count1		Create a 1 GB file
 
+##############################################################################
+jq		It's a json tool 
+echo '{ "Price": 10.0, "Name": "Cable" }' | jq ".Price" 
+
+

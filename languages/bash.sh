@@ -213,6 +213,19 @@ unset -f functname  # deletes a function definition
 declare -f          # displays all defined functions in your login session
 
 
+Some bash reserved variables:
+
+$0 — The name of the current script.
+$1 … $9 — The first 9 arguments to the script.
+$# — number of arguments passed to the script.
+$@ — All the arguments supplied to the script.
+$USER — The username of the user running the script.
+$HOSTNAME — The hostname of the machine the script is running on.
+$SECONDS — The number of seconds since the script was started.
+$RANDOM — Returns a different random number each time is it referred to.
+$LINENO — Returns the current line number in the Bash script.
+
+
 ##############################################################################
 # FLOW CONTROLS
 ##############################################################################
@@ -451,4 +464,22 @@ fc [historynumber}  	Launch the editor with that history number command
 cut -d " " -f 4- file.txt	Show only from the field 4 to end of line, delimiter = " "
 cut -d " " -f 4-8 file.txt	Show only fields from 4 to 8, space counts as a field
 cut -c -5 file.txt		Show each line from character 1 to character 5 only
+
+##############################################################################
+set -u			This will unset variables in your script; useful to prevent issues
+
+##############################################################################
+
+Some bash reserved variables:
+
+$0 — The name of the current script.
+$1 … $9 — The first 9 arguments to the script.
+$# — number of arguments passed to the script.
+$@ — All the arguments supplied to the script.
+$USER — The username of the user running the script.
+$HOSTNAME — The hostname of the machine the script is running on.
+$SECONDS — The number of seconds since the script was started.
+$RANDOM — Returns a different random number each time is it referred to.
+$LINENO — Returns the current line number in the Bash script.
+
 
