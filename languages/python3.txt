@@ -53,4 +53,48 @@ Install a package by also ensuring its getting the latest version
 python -m pip install --upgrade pip
 pip install -U pip
 
+##############################################################################
+dir(5) 			- show a list of available methods for this int 5
+dir('pencil')		- show a list of available methods for this str 'pencil'
+
+##############################################################################
+Touples  	- 	()
+Lists 		- 	[]
+Dictionaries	-	{}
+
+Json
+##############################################################################
+# Json load to string
+>>> import json
+>>> jsonstring = '{"name": "erik", "age": 38, "married": true}'
+>>> json.loads(jsonstring)
+{'name': 'erik', 'age': 38, 'married': True}
+
+# Json dunp to string
+>>> myjson = {'name': 'erik', 'age': 38, 'married': True}
+>>> json.dumps(myjson)
+'{"name": "erik", "age": 38, "married": true}'
+
+# To make the json more readable:
+>>> print(json.dumps(myjson, indent=2))
+{
+  "name": "erik",
+  "age": 38,
+  "married": true
+}
+
+Dictionaries
+##############################################################################
+dict()   - Dicttionary constructor
+>>> dict([ ('Jack', '070-02222748'), ('Pete', '010-2488634'), ('Eric', '06-10101010') ])
+{'Jack': '070-02222748', 'Pete': '010-2488634', 'Eric': '06-10101010'}
+
+#Dictionary Comprehensions
+>>> {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+
+
+##############################################################################
+List comprehension
+
 
