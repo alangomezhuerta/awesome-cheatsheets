@@ -384,6 +384,11 @@ kill -15 913          # Ending PID 913 process with signal 15 (TERM)
 
 ps           # prints a line of information about the current running login shell and any processes running under it
 ps -a        # selects all processes with a tty except session leaders
+ps axms		# info about threads
+ps -U root -u root u	# all process run by root in user format
+ps -C syslog -o pid=	# show only the process IDs of syslog
+ps -q 411 -o comm=	# show only the name of the process 411
+ps axjf			# show process tree
 
 trap cmd sig1 sig2  # executes a command when a signal is received by the script
 trap "" sig1 sig2   # ignores that signals

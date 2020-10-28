@@ -22,6 +22,11 @@ whois example.com
 whois 31.13.80.36 | grep inetnum	-		Find the used network range by (in this case facebook) 
 dig example.com			- 			Gives similar functionality as the whois command,  can be used to find domain-specific info from a linux host
 nslookup google.com		-			Used to query dns servers to provide infor about a remote server
+nslookup -type=ns ubuntu.com	-	lookup the ns records of a domain
+nslookup -type=mx ubuntu.com	-	lookup for the mx records
+nslookup -type=soa ubuntu.com	-	look up a domain's soa(start of authority) 
+nslookup -type=any ubuntu.com	-	show the domain list of dns records
+nslookup [ip address]		-	lookup ap a domain (reverse DNS)
 netstat -l			-			Display listening sockets
 netstat -a			-			Display all listening and no-listening sockets
 traceroute google.com		-			Legacy command to display routes our packages take before reaching a remote destination
@@ -53,3 +58,14 @@ rtmon
 ip addr				-			Display the active IP addresses
 ip link				-			Display the newtork interfaces
 ip addr add 192.168.1.XXX/24 dev eth0		-		To add IPs to specific interfaces
+
+# nmcli  -  network manager cli
+############################################################################## 
+nmcli d		- show all the available network devices
+nmcli -p device		- show very pretty human readable format info
+nmcli connection show 	- view all connections
+nmcli connection show --active		# display all current active connections
+
+#For a good nmcli guide refer this page:
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec-configuring_ip_networking_with_nmcli
+

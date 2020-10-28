@@ -85,16 +85,32 @@ Json
 
 Dictionaries
 ##############################################################################
-dict()   - Dicttionary constructor
->>> dict([ ('Jack', '070-02222748'), ('Pete', '010-2488634'), ('Eric', '06-10101010') ])
+dict()   # Dicttionary constructor
+dict([ ('Jack', '070-02222748'), ('Pete', '010-2488634'), ('Eric', '06-10101010') ])
 {'Jack': '070-02222748', 'Pete': '010-2488634', 'Eric': '06-10101010'}
 
-#Dictionary Comprehensions
->>> {x: x**2 for x in (2, 4, 6)}
+adict =  {x: x**2 for x in (2, 4, 6)} 	# Dictionary from a dict comprehension
 {2: 4, 4: 16, 6: 36}
 
+cities = ('lagos', 'durango', 'mazatlan')
+citiesdict = dict.fromkeys(cities)
+dict.keys(citiesdict)		# retrieves a dict_keys object with the keys
+citiesdict['lagos'] = 'jalisco'
+del(citiesdict['durango'])		# Delete one elemento from the dict
 
+list(cities)			# retrieve all the keys from a dict
+sorted(cities)			# retrieve the keys from a dict sorted
+
+'lagos' in citiesdict		# check if a key exist in a dict
+'torreon' not in citiesdict	# check if a key does not exist in a dict
+
+len(citiesdict)			# retrieve the number of key/value pairs
+
+
+Lists
 ##############################################################################
-List comprehension
+newlist = [ x**2 for x in [2,3,4,5] ]   - List comprehension
+
+
 
 
