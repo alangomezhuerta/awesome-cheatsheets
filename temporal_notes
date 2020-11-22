@@ -1,0 +1,28 @@
+Some bash reserved variables:
+
+$0 — The name of the current script.
+$1 … $9 — The first 9 arguments to the script.
+$# — number of arguments passed to the script.
+$@ — All the arguments supplied to the script.
+$USER — The username of the user running the script.
+$HOSTNAME — The hostname of the machine the script is running on.
+$SECONDS — The number of seconds since the script was started.
+$RANDOM — Returns a different random number each time is it referred to.
+$LINENO — Returns the current line number in the Bash script.
+
+jq		It's a json tool 
+echo '{ "Price": 10.0, "Name": "Cable" }' | jq ".Price" 
+
+
+##############################################################################
+python
+##############################################################################
+
+magic methods or dundies:  __len__
+'a' + str(1)	# 'a1'
+int('2') + 2	# 4
+def __init__(self):
+
+super(),__init__()
+
+
