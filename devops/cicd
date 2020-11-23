@@ -1,0 +1,9 @@
+Continuous Delivery  -   Small build cycle with short sprints
+	Phases: Plan, Code, Build, Test
+
+Continuous Integration - Merging code from all developers to one central branch of the repo many times a day.
+	Phases:  Buld, test and Release
+
+Continuous Deployment - Every change that is made needs to be integrated into Production automatically
+
+

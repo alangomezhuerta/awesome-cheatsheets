@@ -1,0 +1,30 @@
+DevOps stages
+
+Plan 
+Code
+    Git
+Build
+    Maven
+    Gradle
+
+Testing
+    Junit
+    Selenium
+
+Integration - once testing is done, the new features are integrated automatically to the existing codebase
+    Jenkins
+    
+Deployment
+    Application is packaged after release and deployed from dev server to prod server 
+    XebiaLabs
+    bmc
+
+Operate - once software is deployed,  the ops teams perform activities such as configuring servers and provisioning them with the required resources
+    Ansible
+    Chef 
+    
+Monitoring
+    Nagios
+    Splunk
+    OSSEC
+
