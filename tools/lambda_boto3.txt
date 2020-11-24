@@ -1,15 +1,77 @@
-##############################################################################
-# Automation with lambda and boto3
-##############################################################################
+Automation with lambda and boto3
+
+1 - Intro and environment setup
 
 Install boto3
-##############################################################################
+------------------------------------------------------------------------------
 pip3 install boto3
 
 Install awscli
-##############################################################################
+------------------------------------------------------------------------------
 pip3 install awscli			To install it from root account(sudo pip3 ...)
 pip3 install awscli --user		To install it only for the user and avoid permissions errors
+
+Environment setup
+------------------------------------------------------------------------------
 aws configure				Will ask you for access key id and secret
 aws configure --profile root		Will create config for a named profile	
+
+Verify boto3 setup
+------------------------------------------------------------------------------
+cat ~/.aws/config
+
+Boto3 concepts
+------------------------------------------------------------------------------
+Session
+Resource
+Client
+Meta
+Collections
+Waiters
+Paginators
+
+Session 
+- Its a aws management session
+- Stores configuration info (credentials)
+- allows us to create service clients and resources
+- boto3 creates a default session for us when needed
+- There are two types of sessions:
+	Custom Session
+	Default Session
+
+Resource and Client
+- Resource is a higher-level object oriented service access 
+- it is available for some of the aws services
+- Client is a low-level service access
+
+
+2 - boto3 help
+
+boto3 help for client object
+------------------------------------------------------------------------------
+
+boto3 help for resouce object
+------------------------------------------------------------------------------
+
+
+3 - STS
+------------------------------------------------------------------------------
+
+4 - EC2 Services
+------------------------------------------------------------------------------
+
+5 - Waiters
+------------------------------------------------------------------------------
+
+6 - Meta
+------------------------------------------------------------------------------
+
+7 - Collections
+------------------------------------------------------------------------------
+
+8 - Samples(snippets)
+------------------------------------------------------------------------------
+
+
+
 
