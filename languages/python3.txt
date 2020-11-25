@@ -23,6 +23,7 @@ pip3 --version
 pip3 install boto3
 
 
+
 Install python 3 in Debian/Ubuntu
 ##############################################################################
 
@@ -52,6 +53,9 @@ Install a package by also ensuring its getting the latest version
 ##############################################################################
 python -m pip install --upgrade pip
 pip install -U pip
+
+pip freeze -l > requirements.txt	- saves a list of current installed packages
+pip install -r requirements.txt		- install all the packages listed in that file
 
 ##############################################################################
 dir(5) 			- show a list of available methods for this int 5

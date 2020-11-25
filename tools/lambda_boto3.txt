@@ -1,24 +1,31 @@
 Automation with lambda and boto3
 
-1 - Intro and environment setup
++----------------------------------------------------------------------------+
+ 1 Intro and environment setup
++----------------------------------------------------------------------------+
+
 
 Install boto3
 ------------------------------------------------------------------------------
 pip3 install boto3
+
 
 Install awscli
 ------------------------------------------------------------------------------
 pip3 install awscli			To install it from root account(sudo pip3 ...)
 pip3 install awscli --user		To install it only for the user and avoid permissions errors
 
+
 Environment setup
 ------------------------------------------------------------------------------
 aws configure				Will ask you for access key id and secret
 aws configure --profile root		Will create config for a named profile	
 
+
 Verify boto3 setup
 ------------------------------------------------------------------------------
 cat ~/.aws/config
+
 
 Boto3 concepts
 ------------------------------------------------------------------------------
