@@ -5,6 +5,7 @@ Install python 3 in RHEL
 
 yum install gcc openssl-devel bzip2-devel libffi-devel
 cd /usr/src
+
 wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
 tar xzf Python-3.7.4.tgz
 cd Python-3.7.4
@@ -28,7 +29,9 @@ Install python 3 in Debian/Ubuntu
 ##############################################################################
 
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
-		 libnss3-dev libssl-dev libreadline-dev libffi-dev
+		 libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev sqlite3
+
+
 
 * The rest of steps are same as for RHEL
 
