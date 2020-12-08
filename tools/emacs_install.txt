@@ -30,11 +30,12 @@ https://ftp.gnu.org/pub/gnu/emacs/emacs-27.1.tar.gz
 
 
 
-./configure
+./configure --with-json
 make
 
 # if there are dependencies missing then install them, in my case I had install these:
 apt-get install libxpm-dev libxpm4 libjpeg-dev gnutls-bin libtiff-dev libgif-dev libghc-gnutls-dev
+apt-get insall libjansson-dev shellcheck
 
 
  
@@ -68,4 +69,13 @@ Install emacs doom
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
+#include ~/.emacs.d/bin in your PATH 
+# if first time running dooms, then run:
+$ doom doctor
+
+
+Update doom emacs
+---
+$ doom upgrade     # or $ doom up
+$ doom upgrade --packages     # to only upgrade packages and not Doom itself
 
