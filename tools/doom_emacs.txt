@@ -91,6 +91,63 @@ M-x 	all-the-icons-install-fonts  		# this will install the icon font
 
 
 
+packages.el - is where you specify the packages you want installed on top of what 
+doom provides
+
+doom install  - to have the packages to be installed
+
+
+
+
+
+---
+WORKSPACES
+SPC TAB TAB   - Display tab bar
+spc tab n       - new workspace
+spc tab r       - assign a name
+spc tab s     - save the workspace
+spc tab .
+spc tab []     - swith workspaces
+
+PROCECTS
+spc p p     - select a project
+spc spc  - switch a file in the current Projects
+spc .    -  to find a file outside current project
+spc ,       - switch to a buffer in the current Project
+spc b B     - switch to a buffer outside current project
+spc fr      - load a recently viewed file
+
+
+
+COMMON TASKS
+spc :   - for M x
+spc gg  - magit
+
+
+
+FINDING TEXT
+spc sp      - search all files in the current project
+    * When you have a buffer of matches you can jump to the one your want by pressing return or press C-c C-e to edit all the files at once
+    * You can then do whatever edits you want and press C-c C-c to commit, or C-c C-k to abandon your changes
+
+
+s then type two chars to jump forward
+S to jump backwards
+
+gs spc  [type a word]  and you get a key to jump to it ( it is easier with simple vim / function )
+  * if you add (setq avy-all-windows t) to your config.el file,  this will work across all your opened windows
+
+
+UNDO
+
+C - x u     - Show the undo tree
+
+
+NAVIGATING SOURCE CODE
+
+gd (or spc cd)   - Go to the definition of the symbol at point
+gD (or spc cD)   - List references to the symbol at point
+K                - To look for documentation at the symbol at point(uses Dash or Zeal docset if you have it configured)
 
 
 ---
