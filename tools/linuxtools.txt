@@ -28,4 +28,8 @@ dd if=/dev/urandom of=testfile bs=1024MB count1		Create a 1 GB file
 jq		It's a json tool 
 echo '{ "Price": 10.0, "Name": "Cable" }' | jq ".Price" 
 
+##############################################################################
+fd -h			- quick help for common arguments
+fd -e mp3 Natalie	- find a file called Natalie with extension mp3	
+fd -e .txt Keila /home/Isaac	- Search for the work 'Keila' within the content of all files in /home/Isaac
 
