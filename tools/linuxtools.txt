@@ -33,3 +33,15 @@ fd -h			- quick help for common arguments
 fd -e mp3 Natalie	- find a file called Natalie with extension mp3	
 fd -e .txt Keila /home/Isaac	- Search for the work 'Keila' within the content of all files in /home/Isaac
 
+##############################################################################
+
+Create a 200M file zised with zeros
+dd if=/dev/zero of=/tmp/testfile bs=1M count=200
+
+This one also creates a 200M file sized
+fallocate -l 200M /tmp/testfile
+
+
+##############################################################################
+
+stat file.txt		Will give you size info among other details
